@@ -56,6 +56,8 @@ void ray_tracer::render(std::vector<sphere> const& spheres, std::string const& o
 			ofs << trace(r, spheres);
 		}
 	}
+
+	ofs.close();
 }
 
 #endif
