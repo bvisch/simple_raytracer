@@ -1,6 +1,8 @@
 #ifndef __vec3__h
 #define __vec3__h
 
+#include <fstream>
+
 template <typename T>
 class vec3 {
 public:
@@ -20,14 +22,19 @@ public:
 	vec3<T>& operator *=(vec3<T> const& rhs) { x *= rhs.x, y *= rhs.y, z *= rhs.z; return *this; }
 	vec3<T>& operator -=(vec3<T> const& rhs) { x -= rhs.x, y -= rhs.y, z -= rhs.z; return *this; }
 
-	T length() { return sqrt(x * x + y * y + z * z); }
-	vec3<T>& normalize() {
-		if (length > 0) {
-			x = x / length;
-			y = y / length;
-			z = z / length;
+	T length() const { return sqrt(x * x + y * y + z * z); }
+	vec3& normalize() {
+		if (length() > 0) {
+			x = x / length();
+			y = y / length();
+			z = z / length();
 		}
 		return *this;
+	}
+
+	friend std::ostream& operator << (std::ostream& os, const vec3<T>& v) {
+		os << (unsigned char)(std::min(float(1), v.x) * 255) << (unsigned char)(std::min(float(1), v.y) * 255) << (unsigned char)(std::min(float(1), v.z) * 255);
+		return os;
 	}
 };
 

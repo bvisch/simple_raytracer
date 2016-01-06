@@ -14,7 +14,7 @@ public:
 	ray_tracer(unsigned w = 640, unsigned h = 480) : width(w), height(h) {}
 
 	vec3f trace(ray const& r, std::vector<sphere> const& spheres) const;
-	void render(std::vector<sphere> const& spheres, std::string const& outfile) const;
+	void render(std::vector<sphere> const& spheres, std::string const& outfile = "test") const;
 };
 
 #endif
