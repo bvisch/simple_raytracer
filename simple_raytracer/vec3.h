@@ -11,7 +11,7 @@ public:
 	vec3(T i) : x(i), y(i), z(i) {}
 	vec3(T xi, T yi, T zi) : x(xi), y(yi), z(zi) {}
 
-	T dot(vec3 rhs) { return x*rhs.x + y*rhs.y + z*rhs.z; }
+	T dot(vec3 rhs) const { return x*rhs.x + y*rhs.y + z*rhs.z; }
 	vec3<T> operator +(const vec3<T>& rhs) const { return vec3<T>(x + rhs.x, y + rhs.y, z + rhs.z); }
 	vec3<T> operator -(const vec3<T>& rhs) const { return vec3<T>(x - rhs.x, y - rhs.y, z - rhs.z); }
 	vec3<T> operator *(const vec3<T>& rhs) const { return vec3<T>(x * rhs.x, y * rhs.y, z * rhs.z); }

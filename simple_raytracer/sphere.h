@@ -15,7 +15,7 @@ public:
 	sphere() : position(0.5), radius(1.0) {}
 	sphere(vec3f p, float r) : position(p), radius(r) {}
 
-	float intersect(ray r) {
+	float intersect(ray const& r) const {
 		vec3f rc = r.origin - position;
 		float c = rc.dot(rc);
 		float b = r.direction.dot(rc);
