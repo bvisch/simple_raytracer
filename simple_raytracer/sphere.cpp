@@ -9,8 +9,8 @@ float sphere::intersect(ray const& r) const {
 	float b = r.direction.dot(rc);
 	float d = b*b - c;
 	float t = -b - sqrt(abs(d));
-	if (t > 0.0) return t;
-	return 0.0;
+	if (d < 0.0 || t < 0.0) return 0.0;
+	return t;
 }
 
 vec3f sphere::normal_at(vec3f const& point) const {

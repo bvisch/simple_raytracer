@@ -26,7 +26,7 @@ vec3f ray_tracer::trace(ray const& r, std::vector<sphere> const& spheres) const 
 		vec3f hit_normal = nearest_sphere.normal_at(point_hit);
 
 		//hardcoding light for now
-		vec3f light = vec3f(0.0, 20.0, -30.0);
+		vec3f light = vec3f(20.0, 20.0, -30.0);
 		vec3f light_direction = light - point_hit;
 		float b = hit_normal.dot(light_direction);
 		float brightness = std::max(float(0), b);
@@ -34,7 +34,7 @@ vec3f ray_tracer::trace(ray const& r, std::vector<sphere> const& spheres) const 
 		return vec3f(0.5, 0.5, 0.5) * brightness;
 	}
 	else {
-		return vec3f(0.0);
+		return vec3f(0.0, 0.9, 0.9);
 	}
 }
 
