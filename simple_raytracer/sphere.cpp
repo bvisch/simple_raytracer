@@ -5,7 +5,7 @@
 
 float sphere::intersect(ray const& r) const {
 	vec3f rc = r.origin - position;
-	float c = rc.dot(rc);
+	float c = rc.dot(rc) - radius*radius;
 	float b = r.direction.dot(rc);
 	float d = b*b - c;
 	float t = -b - sqrt(abs(d));

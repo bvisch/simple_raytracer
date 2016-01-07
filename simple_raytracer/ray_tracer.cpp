@@ -48,7 +48,7 @@ void ray_tracer::render(std::vector<sphere> const& spheres, std::string const& o
 	ofs << "P6\n" << width << " " << height << "\n255\n";
 
 	for (unsigned y = 0; y < height; ++y) {
-		for (unsigned x = 0; x < height; ++x) {
+		for (unsigned x = 0; x < width; ++x) {
 			float xi = (2 * ((x + 0.5) * width_inv) - 1) * angle * aspect_ratio;
 			float yi = (1 - 2 * ((y + 0.5) * height_inv)) * angle;
 			vec3f ray_direction = vec3f(xi, yi, -1).normalize();
