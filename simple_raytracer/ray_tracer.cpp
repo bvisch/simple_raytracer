@@ -34,7 +34,7 @@ vec3f ray_tracer::trace(ray const& r, std::vector<sphere> const& spheres) const 
 		return vec3f(0.5, 0.5, 0.5) * brightness;
 	}
 	else {
-		return vec3f(0.0, 0.9, 0.9);
+		return vec3f(0.5, 0.9, 0.9);
 	}
 }
 
